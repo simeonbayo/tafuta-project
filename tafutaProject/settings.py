@@ -26,7 +26,7 @@ SECRET_KEY = 'z4*x3df#$9028_dps6febx%)=i8bh2=&0ps7u@^mq0dh%u+olg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tafutasearch.com']
 
 
 # Application definition
