@@ -1,0 +1,36 @@
+{% extends 'main/basegeneric.html' %}
+{% load static %}
+{% block title %}
+    <title>Request Sent</title>
+{% endblock %}
+{% block content %}
+<div class="card">
+    <div class="card-content">
+        <h5 class="green-text text-darken-3">Your service request has been sent successfully....<i class="fas fa-check-circle"></i></h5>
+
+    </div>
+    
+</div>
+
+<div class="card">
+    <div class="card-content">
+        <img src="{% static 'lostdoc/images/sitelogo.png' %}" alt="tafuta logo">
+        <p class="right"> <b><a href="{% url 'upload' %}">Upload Now</a> | 
+            <a href="{% url 'usersearch' %}">Search Now</a></b>
+             </p>
+        <div class="card-action"></div>
+        <h5 class="green-text text-darken-3">You can explore more of our services below:</h5>
+        <div class="card-action"></div>
+    {% if doctypeServices %}
+    <ul>
+        {% for services in doctypeServices %}
+        <li><h5><i class="fas fa-briefcase left green-text text-darken-3"></i><a href="{% url 'doctypedetail' services.id %}">{{ services.docname }}</a></h5></li>
+      <!-- <p>{{ services.desc }}</p>--> 
+       {% endfor %}
+    </ul>
+    {% endif %}
+    </div>
+</div>
+    
+    
+{% endblock %}

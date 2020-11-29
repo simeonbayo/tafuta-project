@@ -1,0 +1,212 @@
+{% load static %}
+<!Doctype html>
+<html lang="en">
+<head>
+    {% block title %}{% endblock %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1">
+    
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'static/css/bootstrap.min.css' %}">
+    
+    <link rel="stylesheet" type="text/css" href="|{% static 'materialize/css/materialize.css' %}">
+    <script src="{% static 'bootstrap4/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'materialize/js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'materialize/js/materialize.min.js' %}"></script>
+</head>
+<body>
+    <div class="row">
+        <div class="col m12">
+            <nav>
+                <div class="nav-wrapper  light-green">
+                    <a href="#" class="brand-logo left">
+                      <img src="{% static 'lostdoc/images/sitelogo.png' %}" alt="tafuta logo">
+                    </a>
+                    <ul id="nav-mobile" class="right">
+                        <li class="active"><a href="{% url 'home' %}"><i class="fas fa-home left"></i></i>Home</a></li>
+                        <li><a href="{% url 'aboutus' %}"><i class="fas fa-users left"></i>About Us</a></li>
+                        <li><a href="{% url 'contactus' %}"><i class="fas fa-phone-alt left"></i>Contact Us</a></li>
+                        <li><a href="#" class="dropdown-trigger" data-target='dropdown2'><i class="fas fa-briefcase  left"></i>Our Services<i class="fas fa-caret-down right"></i></a></li>
+                        <li><a href="{% url 'tos' %}"><i class="fas fa-handshake left"></i>Terms of Use</a></li>
+                        <li><a href="#" class="dropdown-trigger" data-target='dropdown1'><i class="fas fa-user left"></i>{{ user }}<i class="fas fa-caret-down right"></i></a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- Dropdown Structure -->
+            <ul id='dropdown1' class='dropdown-content'>
+              <li><a href="{% url 'logout'%}"><i class="fas fa-sign-out-alt left blue-text"></i>Logout</a></li>
+              
+            </ul>
+            <ul id='dropdown2' class='dropdown-content'>
+              
+              <li><a target="" href="{% url 'doctypedetail' 1%}" ><i class="fas fa-id-card left blue-text darken-3"></i>National ID</a></li>
+              <li><a href="{% url 'doctypedetail' 2%}"><i class="fas fa-passport left green-text"></i>Passport</a></li>
+              <li><a href="{% url 'doctypedetail' 3%}"><i class="fas fa-id-card-alt left purple-text"></i>Driving</a></li>
+              <li><a href="{% url 'doctypedetail' 4%}"><i class="fas fa-graduation-cap left yellow-text darken-4"></i>Academic</a></li>
+              <li><a href="{% url 'doctypedetail' 5%}" ><i class="fas fa-file-alt left pink-text darken-4"></i>Other</a></li>
+              
+            </ul>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col m7">
+            <div class="card">
+                <div class="card-content">
+                    
+                        <h5 class="dark blue-text text-darken-3">Find your lost important Documents</h5>
+                    
+            
+            <div class="slider">  
+                <ul class="slides">  
+                  <li>  
+                    <img src="images/nin.jpg" style="border-right-width:0;">  
+                    <!-- random image -->  
+                    <div class="caption center-align">  
+                      <h3></h3>  
+                      <h5 class="light grey-text text-lighten-3"></h5>  
+                    </div>  
+                  </li> 
+                  <li>  
+                    <img src="images/DrivingPermit.jpg" style="border:0;">  
+                    <!-- random image -->  
+                    <div class="caption center-align">  
+                      <h3></h3>  
+                      <h5 class="light grey-text text-lighten-3"></h5>  
+                    </div>  
+                  </li>  
+                  <li>  
+                    <img src="images/passports.jpg">  
+                    <!-- random image -->  
+                    <div class="caption center-align">  
+                      <h3></h3>  
+                      <h5 class="light grey-text text-lighten-3"></h5>  
+              </div>  
+              </li>   
+                  </ul>
+                </div>
+            
+            <div class="card-action">
+                <form class="form">
+                    <div class="row">
+                        <div class = "input-field col s4">  
+                        
+                            <input placeholder = "" value = "" id = "uname"  
+                               type = "text" class = "active validate" required />  
+                            <label for = "uname">UserName</label>  
+                         </div> 
+                         <div class = "input-field col s4">        
+                            <label for = "password">Password</label>  
+                            <input id = "password" type = "password" placeholder = "Password"  
+                               class = "validate" required />            
+                         </div> 
+                        <button type="submit" class="btn btn-primary blue"><a style="color: white;" href="search.html">Sign In</a></button>
+                    </div>
+                </form>
+                </div>
+        </div>
+        </div>
+        </div>
+        <div class="col m5">
+            <div class="card">
+                
+                <div class="card-content">
+                    
+            <h5 class="dark blue-text text-darken-3">Create an Account</h5>
+            <p>An account gives you access to upload a lost document and earn some money. It also
+                gives you access to search for your lost document
+            </p>
+            <form class="form">
+                <div class="row">
+                    <div class = "input-field col s6">  
+                        
+                        <input placeholder = "" value = "" id = "fname"  
+                           type = "text" class = "active validate" required />  
+                        <label for = "fname">First Name</label>  
+                     </div> 
+                
+                     <div class = "input-field col s6">  
+                        
+                        <input placeholder = "" value = "" id = "lname"  
+                           type = "text" class = "active validate" required />  
+                        <label for = "lname">Last Name</label>  
+                     </div> 
+                </div>
+                <div class = "row">  
+                    <div class = "input-field col s6">  
+                        
+                       <input placeholder = "" value = "" id = "mobile"  
+                          type = "text" class = "active validate" required />  
+                       <label for = "mobile">Telephone Number</label>  
+                    </div> 
+                    <div class = "input-field col s6">  
+                        <input placeholder = "Email" id = "email" type = "email"  
+                           class = "validate">  
+                        <label for = "email">Email</label>  
+                     </div> 
+                </div>
+                
+                 <div class = "row">  
+                    <div class = "input-field col s6">  
+                        <select name="district">
+                            <option>IT</option>
+                            <option>Business</option>
+                            <option>Fashion</option>
+                            <option>Electrical</option>
+                            </select> 
+                       <label for = "district">District</label>  
+                    </div>  
+                    <div class = "input-field col s6">  
+                       
+                        <textarea id = "address" class = "materialize-textarea"></textarea>  
+                        <label for = "address">Address</label>  
+                     </div>  
+                 </div> 
+                  
+                 <div class = "input-field col s12">        
+                    <label for = "password">Password</label>  
+                    <input id = "password" type = "password" placeholder = "Password"  
+                       class = "validate" required />            
+                 </div>  
+                 <button type="submit" class="btn btn-primary blue">Sign Up</button>
+              </div>   
+            </form>
+        </div>
+        </div>
+        </div>
+        <div class="row">
+            
+        <footer class="page-footer" style="margin-bottom: 0;">
+            
+            <div class="footer-copyright">
+              <div class="container">
+              © 2014 Copyright Tafuta. All Rights reserved
+              <a class="grey-text text-lighten-4 right" href="#!">Call +256703512486</a>
+              </div>
+            </div>
+          </footer>
+              
+        </div>
+    </div>
+    {% block javascript %}
+    <script> $(document).ready(function() {  
+        $(".slider").slider({ full_width: true });  
+      });  
+      </script>  
+      <script>
+        $(document).ready(function(){
+        
+          // Initialize materialize data picker
+          $('.datepicker').datepicker({'format': 'yyyy-mm-dd'});
+          $('select').formSelect();
+        
+        });
+        $(document).ready(function(){
+            $('.collapsible').collapsible();
+            $('.dropdown-trigger').dropdown();
+            $('.modal').modal();
+          });
+        </script>
+    {% endblock %}
+</body>
+</html>

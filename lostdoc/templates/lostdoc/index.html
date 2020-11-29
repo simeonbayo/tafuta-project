@@ -1,0 +1,119 @@
+{% extends 'main/basegenerictwo.html' %}
+{% block title %}
+<title>Welcome</title>
+{% endblock %}
+{% load static %}
+
+    {% block sidebar %}
+
+    
+    <div class="card">
+        <div class="card-content">
+            <h4 class="green-text"><b>Welcome to Tafuta</b></h4>
+            
+            <p>
+                A popular lost documents search engine and tool. Just type in your search query 
+                e.g your name (Agona Ivan) and click the search button. The search will take only a short while.
+                As soon as we find any results matching your search query - you will get a list of your results. 
+                It is that simple.
+            </p>
+            <p>
+                The usage of our website is free and does not require any software or registration. 
+                By using our website you accept our Terms of Use. Have fun and enjoy the use of our website. 
+            </p>
+            
+          
+        </div>
+    </div>
+    <h4 class="green-text"><b>&nbsp;&nbsp;Core Features</b></h4>
+    <div class="card">
+        <div class="card-content">
+          <h5 class="black-text"><b>Document Upload</b> <a href="{% url 'upload' %}" role="button" class="btn black right"><i class="fas fa-file-upload left"></i>Upload Now</a></h5><br>
+      <p>Make some quick money by uploading any lost and found National ID or any other important documents onto
+        this platform.
+ 
+      </p>  
+      <img src="{% static 'lostdoc/images/uploadnow.png' %}" width="550"> 
+         <!--<h5 class="green-text"><b>User Activities</b></h5>
+          <ul class="collapsible">
+            <li >
+              <div class="collapsible-header green-text"><i class="fas fa-search"></i>Search</div>
+              <div class="collapsible-body"><span>By clicking the search button, you will automatically be taken
+                to the Tafuta Search form, where you will be able to search for your lost ID and any other lost document.
+              </span></div>
+            </li>
+            <li class="active">
+              <div class="collapsible-header green-text"><i class="fas fa-file-upload"></i>Upload</div>
+              <div class="collapsible-body"><span>By clicking the Upload button, you will automatically be taken 
+                to Tafuta document upload form, where you will be able to upload someone's lost document and
+                qualify to <span class="green-text"><b>earn a passive income with Tafuta</b></span>.</span></div>
+            </li>
+            
+          </ul>--> 
+        </div>
+</div>
+<div class="card">
+  <div class="card-content">
+    <h5 class="black-text"><b>Service Request</b> <a href="{% url 'services' %}" role="button" class="btn black right"><i class="fas fa-briefcase left"></i>Request Now</a></h5><br>
+<p>Do you want to process a new or renew a Passport, Driving Permit, Work Permits among other important
+  documents, use our service request form to send us your request and we shall be glad to help you out, with
+  all the document processing.
+</p>  
+<img src="{% static 'lostdoc/images/services.png' %}" width="550"> 
+   
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="card-content">
+    <p class="right"> <b><a href="{% url 'upload' %}">Upload Now</a> | 
+      <a href="{% url 'usersearch' %}">Search Now</a></b>
+       </p>
+    <h4 class="green-text"><b>Documents</b></h4>
+    <p>At Tafuta we handle the processing, renewal and recovery of most important documents, among which
+       include the following:<br><div class="card-action"></div>
+       <b class="black-text">National ID, Driving Permits, Passports, Academic Documents, Interpol Certificate,
+       Work Permits, DISO Letters, Temporary Movement Permits (TMP), Certificates of identity,
+       COVID-19, Yellow Fever.</b>
+    </p>
+    
+    
+    </div>
+</div>
+<h3 class="blue-text"></h3><br><br>
+<div class="card">
+    <div class="card-content">
+      <h5 class="black-text"><b>Document Search</b> <a href="{% url 'usersearch' %}"  role="button" class="btn black right"><i class="fas fa-search left"></i>Search Now</a></h5><br>
+      <p>Easily find your lost National ID and any other important document using the documents search
+        engine.
+      </p>  
+      <img src="{% static 'lostdoc/images/searchnow.png' %}" width="550">  
+      
+            </div>
+
+</div> 
+<div class="card">
+  <div class="card-content">
+    <h5 class="black-text"><b>Document Not Found</b> <a href="{% url 'notfound' %}"  role="button" class="btn black right"><i class="fas fa-id-card left"></i>Fill Form Now</a></h5><br>
+    <p>Have not found your document from our database, use this feature to help us find your document.
+    </p>  
+    <img src="{% static 'lostdoc/images/notfound.png' %}" width="550">  
+    
+          </div>
+
+</div> 
+</div>
+{% endblock %}
+
+     <script> 
+  $(document).ready(function() {  
+      $(".slider").slider({ full_width: true });  
+    });  
+
+    $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+       
+    </script>

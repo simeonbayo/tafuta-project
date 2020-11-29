@@ -1,0 +1,93 @@
+{% extends 'main/basegenerictwo.html' %}
+{% block title %}
+<title>About | Tafuta</title>
+{% endblock %}
+{% load static %}
+{% block sidebar %}
+<div class="card">
+    
+    <div class="card-content">
+        <h5 class="light-green-text text-darken-3">About Tafuta</h5>
+        <p>Tafuta is a Webbased and Mobile Application aiming to revolutionize document management systems (DMS) and recovery within Africa.
+            Our solution helps solve the tedious processes involved while replacing lost documents by saving both time and money while recovering 
+            the documents. Among the documents we handle include but not limited to National IDs, Passports, Driving licences and academic documents. 
+        </p>
+    <h5 class="light-green-text text-darken-3">Our Core Values</h5>
+    <ul>
+        <li>Confidentiality</li>
+        <li>Integrity</li>
+        <li>Availability</li>
+    </ul>
+    <p>
+        We give the power of content provision to the to upload the lost and found documents and we do 
+        promise  to ensure that our systems are user friendly and easy to use in the search and upload 
+        of the lost documents. Our main focus currently is the National Identification cards issued by NIRA,
+         this we hope will enable citizens to engage in the upcoming elections and also access other public
+          places due to the recovery of their Documents.
+    </p>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+
+<div class="card">
+    <div class="card-content">
+        <h5 class="light-green-text text-darken-3">Our Team</h5>
+        <div class="card darken-1">
+            <div class="card-content light-green-text text-darken-3">
+              <h5>Director of Operations (D.O.S)</h5>
+              
+              <div class="card-image">
+                <img src="{% static 'lostdoc/images/agonaivan.png' %}" width="356" height="536">
+            </div>
+            <span class="card-title light-green-text text-darken-3">Agona Ivan Kutosi</span>
+            <p class="black-text">Experienced Data Assistant with a demonstrated history of working in the information 
+              technology and services industry. Skilled in Public Speaking, Network Administration, 
+              Network Security, and System Administration. Strong administrative professional focused 
+              in Computer/Information Technology..</p>
+            </div>
+            <div class="card-action">
+                <a href="#"  class="black-text"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="black-text"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="black-text"><i class="fas fa-phone-alt"></i></a>
+            </div>
+          </div>
+          <div class="card darken-1">
+            <div class="card-content light-green-text text-darken-3">
+              <h5>Chief Technology Officer (C.T.O)</h5>
+              
+              <div class="card-image">
+                <img src="{% static 'lostdoc/images/bayosimon.jpg' %}" width="356" height="536">
+            </div>
+            <span class="card-title">Bayo Simon</span>
+            <p class="black-text">
+              I am passionate Software Engineer and researcher with over four years of experience  based in Uganda.
+              I Develope for both Mobile and Web. I program in Java, JavaScript, Python, C++ and work with Flutter,
+              Django, Bootstrap, materialize css Frameworks.
+              Am currently researching and working with Virtual Reality(VR) and Augmented Reality(AR) technologies.
+            </p>
+            </div>
+            <div class="card-action">
+                <a href="https://www.facebook.com/simon.bayo/"  class="black-text"><i class="fab fa-facebook"></i> simon.bayo</a>
+                <a href="#" class="black-text"><i class="fab fa-whatsapp"></i> +256 703 512486</a>
+                <a href="#" class="black-text"><i class="fas fa-phone-alt"></i> +256 703 512486</a>
+            </div>
+          </div>
+          <div class="card darken-1">
+            <div class="card-content light-green-text text-darken-3">
+              <h5>Business Development Manager (B.D.M)</h5>
+              
+              <div class="card-image">
+                <i style="font-size:xx-large;" class="fas fa-user-tie"></i>
+            </div>
+            <span class="card-title">Odoch Titus</span>
+            </div>
+            <div class="card-action">
+                <a href="#"  class="black-text"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="black-text"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="black-text"><i class="fas fa-phone-alt"></i></a>
+            </div>
+          </div>
+    </div>
+</div>
+{% endblock %}

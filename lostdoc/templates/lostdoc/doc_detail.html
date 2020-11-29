@@ -1,0 +1,30 @@
+{% extends 'main/basegeneric.html' %}
+{% block title %}<title>Document | Detail</title>{% endblock %}
+{% load static %}
+{% load materializecss %}
+
+{% block content %}
+<div class="card">
+    <div class="card-content">
+        <img src="{% static 'lostdoc/images/sitelogo.png' %}" alt="tafuta logo">
+        <p class="right"> <b><a href="{% url 'upload' %}">Upload Now</a> | 
+            <a href="{% url 'usersearch' %}">Search Now</a></b>
+             </p>
+             <div class="card-action"></div>
+        <h4 class="light-green-text text-darken-3">{{ doc.doctype }} Request</h4>
+    
+    <img src="{{ doc.docfile.url }}"  width="485" height="304">
+    </div>
+</div>
+<div class="card">
+    <div class="card-content">
+      
+    <h5 class="light-green-text text-darken-3">Fill Request Form</h5>
+    <form method="POST" action="{% url 'docrequest' doc.id %}">
+        {% csrf_token %}
+        {{ form|materializecss:'m11'}}
+        <button type="submit" class="btn btn-primary"><i class="fas fa-arrow-alt-circle-right left"></i>Send</button>
+    </form>
+    </div>
+</div>
+{% endblock %}

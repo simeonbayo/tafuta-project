@@ -1,0 +1,28 @@
+{% extends 'main/basegeneric.html' %}
+{% load static %}
+{% block title %}
+    <title>Our | Services</title>
+{% endblock %}
+{% block content %}
+<div class="card">
+    <div class="card-content">
+        <h3 class="green-text">Our Document Services</h3>
+        <div class="card-action"></div>
+        {% if doctypeServices %}
+            <ul>
+                {% for service in doctypeServices %}
+                    <li><h5><i class="fas fa-briefcase left green-text text-darken-3"></i><a href="{% url 'doctypedetail' service.id  %}">{{ service.docname }}</a></h5></li>
+                    <p>{{ service.desc }}</p>
+                    <div class="card-action">
+                        <a role="button" class="btn" href="{% url 'doctypedetail' service.id %}"><b>Request Service</b></a>
+                    </div>
+                        <br>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <h5>No Services Found!</h5>
+        {% endif %}
+    </div>
+    </div>
+    
+{% endblock %}

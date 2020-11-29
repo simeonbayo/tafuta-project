@@ -1,0 +1,20 @@
+{% extends 'main/basegeneric.html' %}
+
+    {% block title %}<title>Document Upload</title>{% endblock %}
+    {% load static %}
+    {% load materializecss %}
+
+{% block content %}
+    <h4 class="orange-text accent-4">Add Document Type</h4>
+    
+    <form method="POST" class="form" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        {{ form|materializecss }}
+        <button type="submit" class="btn waves-effect waves-light">Add</button>
+        
+            
+    </form>
+   <p><a href="{% url 'logout' %}">Logout</a></p>
+   
+   {% endblock %}

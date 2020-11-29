@@ -1,0 +1,26 @@
+{% extends 'main/basegeneric.html' %}
+
+    {% block title %}<title>Document Upload</title>{% endblock %}
+    {% load static %}
+    {% load materializecss %}
+
+{% block content %}
+<div class="card">
+    <div class="card-content">
+        <img src="{% static 'lostdoc/images/sitelogo.png' %}" alt="tafuta logo">
+      <p class="right"> <b><a href="{% url 'upload' %}">Upload Now</a> | 
+        <a href="{% url 'usersearch' %}">Search Now</a></b>
+         </p>
+        <div class="card-action"></div>
+    <h5 class="light-green-text text-darken-3"><i class="fas fa-file-upload left "></i>Upload Document</h5>
+    
+    <form method="POST" class="form" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        {{ form|materializecss:'m10' }}
+        <button type="submit" class="btn waves-effect waves-light green"><i class="fas fa-file-upload left"></i>Upload Document</button>
+    
+    </form>
+</div>
+</div> 
+   {% endblock %}

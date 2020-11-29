@@ -1,0 +1,29 @@
+{% extends 'main/basegenericthree.html' %}
+{% block title %}
+<title>Contact | Tafuta</title>
+{% endblock %}
+{% load static %}
+{% load materializecss %}
+
+
+{% block content %}
+<div class="card">
+    <div class="card-content">
+        <h5 class="green-text"><b>CONTACT US<i class="fas fa-headset right"></i></b></h5>
+    </div>
+</div>
+<div class="card">
+    <div class="card-content">
+        <h5 class="green-text"><b>Send us a Message<i class="fas fa-envelope right"></i></b></h5>
+        <p>For more information fill the inquiry form below:</p>
+        <div class="card-action"></div>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form | materializecss:'m6'}}
+           
+            <button type="submit" class="btn blue">SEND</button>
+        </form>
+
+    </div>
+</div>
+{% endblock %}

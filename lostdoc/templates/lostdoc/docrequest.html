@@ -1,0 +1,18 @@
+{% load crispy_forms_tags%}
+<!DOCTYPE html>
+<head>
+    <title>Document Upload</title>
+</head>
+<body>
+    <h3>Request Document</h3>
+    
+    <form method="POST" class="form-group" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy}}
+        <button type="submit" class="btn btn-primary">Send Request</button>
+        
+            
+    </form>
+   <p><a href="{% url 'logout' %}">Logout</a></p>
+</body>
+</html>

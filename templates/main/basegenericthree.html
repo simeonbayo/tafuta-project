@@ -1,0 +1,130 @@
+{% load static %}
+
+<!Doctype html>
+<html lang="en">
+<head>
+    {% block title %}{% endblock %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1">
+    <link rel="stylesheet" href="{% static 'lostdoc/css/all.css'%}" type="text/css">
+    {% block css %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/css/materialize.min.css" integrity="sha256-qj3p6P1fJIV+Ndv7RW1ovZI2UhOuboj9GcODzcNFIN8=" crossorigin="anonymous" />
+    {% endblock css %} 
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
+          <link rel = "stylesheet"  
+          href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body class="white">
+  
+  <div class="row">
+      <div class="col m12">
+        <nav>
+          <div class="nav-wrapper  light-green">
+              <a href="#" class="brand-logo left">
+                <img src="{% static 'lostdoc/images/sitelogo.png' %}" alt="tafuta logo">
+              </a>
+              <ul id="nav-mobile" class="right">
+                  <li class="active"><a href="{% url 'home' %}"><i class="fas fa-home left"></i></i>Home</a></li>
+                  <li><a href="{% url 'aboutus' %}"><i class="fas fa-users left"></i>About Us</a></li>
+                  <li><a href="{% url 'contactus' %}"><i class="fas fa-phone-alt left"></i>Contact Us</a></li>
+                  <li><a href="#" class="dropdown-trigger" data-target='dropdown2'><i class="fas fa-briefcase  left"></i>Our Services<i class="fas fa-caret-down right"></i></a></li>
+                  <li><a href="{% url 'tos' %}"><i class="fas fa-handshake left"></i>Terms of Use</a></li>
+                  <li><a href="#" class="dropdown-trigger" data-target='dropdown1'><i class="fas fa-user left"></i>{{ user }}<i class="fas fa-caret-down right"></i></a></li>
+              </ul>
+          </div>
+      </nav>
+      <!-- Dropdown Structure -->
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="{% url 'logout'%}"><i class="fas fa-sign-out-alt left blue-text"></i>Logout</a></li>
+        
+      </ul>
+      <ul id='dropdown2' class='dropdown-content'>
+        
+        <li><a target="" href="{% url 'doctypedetail' 1%}" ><i class="fas fa-id-card left blue-text darken-3"></i>National ID</a></li>
+        <li><a href="{% url 'doctypedetail' 2%}"><i class="fas fa-passport left green-text"></i>Passport</a></li>
+        <li><a href="{% url 'doctypedetail' 3%}"><i class="fas fa-id-card-alt left purple-text"></i>Driving</a></li>
+        <li><a href="{% url 'doctypedetail' 4%}"><i class="fas fa-graduation-cap left yellow-text darken-4"></i>Academics</a></li>
+        <li><a href="{% url 'doctypedetail' 5%}" ><i class="fas fa-file-alt left pink-text darken-4"></i>Other</a></li>
+        
+      </ul>
+
+      </div>
+  </div>
+  
+  <div class="row">
+      
+      <div class="col m4">
+        {% block sidebar %}
+          <div class="card">
+              <div class="card-content">
+                  <h6 class="green-text"><b><i class="fas fa-map-marker-alt left"></i>Address</b></h6>
+                  <p>Kisasi, Step by Step<br>Kampala-Uganda</p>
+                  <div class="card-action"></div>
+                  <h6 class="green-text"><b><i class="fas fa-envelope left"></i>Email</b></h6>
+                  <p>info@tafutasearch.com</p>
+                  <h6 class="green-text"><b><i class="fas fa-phone-alt left"></i>Phone</b></h6>
+                  <p>+256 703512486</p>
+              </div>
+          </div>
+{% endblock %}
+      </div>
+      
+      
+      
+      <div class="col m8">
+        {% block content %}
+          
+        {% endblock %}
+      </div>
+      
+     
+      
+  </div>
+
+      <div class="row">
+        <div class="col m12"> 
+      <footer class="page-footer light-green" style="margin-bottom: 0;">
+          
+          <div class="footer-copyright">
+            <div class="container">
+              © 2014 Copyright Tafuta. All Rights reserved
+              <a class="grey-text text-lighten-4 right" href="#!"><i class="fas fa-phone-alt"></i> +256703512486&nbsp;</a>
+              <a class="grey-text text-lighten-4 right" href="#!"><i class="fab fa-whatsapp"></i> +256703512486&nbsp;</a>
+              <a class="grey-text text-lighten-4 right" href="#!"><i class="fab fa-facebook"></i> Tafuta&nbsp;</a>
+            </div>
+          </div>
+      </footer>
+    </div> 
+      </div>
+  </div>
+  <script> $(document).ready(function() {  
+      $(".slider").slider({ full_width: true });  
+    });  
+    </script>  
+    {% block javascript %}
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js" integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
+
+<script>
+  $(document).ready(function(){
+  
+    // Initialize materialize data picker
+    $('.datepicker').datepicker({'format': 'yyyy-mm-dd'});
+    $('select').formSelect();
+  
+  });
+  $(document).ready(function(){
+      $('.collapsible').collapsible();
+      $('.dropdown-trigger').dropdown();
+      $('.modal').modal();
+    });
+  </script>
+{% endblock javascript %}
+</body>
+</html>

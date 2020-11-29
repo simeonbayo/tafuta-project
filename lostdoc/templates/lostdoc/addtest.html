@@ -1,0 +1,26 @@
+{% extends 'main/basegeneric.html' %}
+
+    {% block title %}<title>Document Upload</title>{% endblock %}
+    {% load static %}
+    {% load materializecss %}
+
+{% block content %}
+    <h4 class="orange-text accent-4">Add Document Type</h4>
+    <div id="my_camera"></div>
+<input type=button value="Take Snapshot" onClick="take_snapshot()">
+ 
+<div id="results" ></div>
+    <form method="POST" action="" class="form" enctype="multipart/form-data">
+        {% csrf_token %}
+            Documentname: <input type="text" name="docname" /><br><br>
+            Image: <input type="file" name="docimage" id="image" value=""/><br><br>
+            Desc: <input type="text" name="desc" /><br><br>
+
+            <input type="Submit" name="Submit" value="Submit"/>
+        
+            
+    </form>
+    {{ image }}
+   <p><a href="{% url 'logout' %}">Logout</a></p>
+   
+   {% endblock %}

@@ -1,0 +1,17 @@
+{% load crispy_forms_tags%}
+<!DOCTYPE html>
+<head>
+    <title>Sign Up</title>
+</head>
+<body>
+    <h3>Create a Tafuta Account</h3>
+    <p>Fill in all the required fields and use a password you will always remember</p>
+    <form method="POST" class="form-group">
+        {% csrf_token %}
+        {{ form|crispy}}
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+        <p>Have already an account click here to <a href="{% url 'login' %}">Login</a> or 
+            <a href="{% url 'logout' %}">Logout</a></p>
+    </form>
+</body>
+</html>

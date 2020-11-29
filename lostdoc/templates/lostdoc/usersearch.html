@@ -1,0 +1,48 @@
+{% extends 'main/basegeneric.html' %}
+{% block title %}
+<title>User | Search </title>
+{% endblock %}
+{% load static %}
+{% load materializecss %}
+{% block content %}
+<div class="card">
+    <div class="card-content">
+        <img src="{% static 'lostdoc/images/sitelogo.png' %}" alt="tafuta logo">
+        <p class="right"> <b><a href="{% url 'upload' %}">Upload Now</a> | 
+            <a href="{% url 'usersearch' %}">Search Now</a></b>
+             </p>
+        <div class="card-action"></div>
+        <form class="form" action="{% url 'usersearch' %}" method="GET" value="{{ request.GET.q }}">
+            <h5><b>Search</b> </h5><input type="text" name="q" value="{{ request.GET.q }}" placeholder="Enter your first and lastname e.g (Bayo Simon)">
+            
+            <button type="submit" class="btn green" name="submit" value="Search"><i class="fas fa-search"></i> Search</button>        
+            
+            
+        </form>
+        
+        {% if submitbutton == 'Search' and request.GET.q != "" %}
+            {% if results %}
+            <h5>Results for <b>{{ request.GET.q }}</b></h5>
+            {% for result in results %}
+           <h6 class="green-text">{{ result.doc_surname }}&nbsp;&nbsp;{{ result.doc_givenname }}</h6> 
+            <div class="card">
+                <div class="card-content">
+                    <img src="{{ result.docfile.url }}" alt="{{ result.doc_surname  }}" width="485" height="304"><br>
+                    
+                    <a role="button" href="{% url 'docdetail' result.id %}" class="btn green"><i class="fas fa-rocket left"></i>Make Request</a>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="card">
+                <div class="card-content">
+                    <h6>No results found (Try again)...<a href="{% url 'notfound' %}" >(or Fill Not Found Form)</a></h6>
+                </div>
+                
+            </div>
+                
+            {% endif %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

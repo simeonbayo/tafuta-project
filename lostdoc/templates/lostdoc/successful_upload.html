@@ -1,0 +1,32 @@
+{% extends 'main/basegeneric.html '%}
+{% load static %}
+{% block title %}
+<title>Upload Complete</title>
+{% endblock %}
+{% block content %}
+<div class="card">
+    <div class="card-content">
+        <h5 class="green-text text-darken-3">Document  has been uploaded successfully.....<i class="fas fa-check-circle"></i></h5>
+    <div class="card-action">
+       <b><a href="{% url 'upload' %}"><i class="fas fa-file-upload left"></i>Upload Another</a>
+        <a href="{% url 'usersearch' %}"><i class="fas fa-search left"></i>Search (Find a friends, relative ) lost document</a>
+    </b>     
+    </div>
+    </div>
+    
+</div>
+<div class="card">
+<div class="card-content">
+    <h5 class="green-text text-darken-3">You can explore more of our services below:</h5>
+{% if doctype_list %}
+    <ul>
+        {% for doctype in doctype_list %}
+        <li><h5><i class="fas fa-briefcase left green-text text-darken-3"></i><a href="{% url 'doctypedetail' doctype.id %}">{{ doctype.docname }}</a></h5></li>
+      <!-- <p>{{ doctype.desc }}</p>--> 
+       {% endfor %}
+    </ul>
+    {% endif %}
+
+</div>
+</div>
+{% endblock%}
